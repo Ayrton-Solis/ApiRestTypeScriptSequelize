@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const closet_controllers_1 = require("../controllers/closet.controllers");
+const router = (0, express_1.Router)();
+router.get('/closet', closet_controllers_1.closet.findAll);
+router.post('/closet', closet_controllers_1.closet.createClothing);
+router.put('/closet/:id', closet_controllers_1.closet.updateClothes);
+router.delete('/closet/:id', closet_controllers_1.closet.deleteClothes);
+router.get('/closet/:id', closet_controllers_1.closet.findById);
+exports.default = router;
